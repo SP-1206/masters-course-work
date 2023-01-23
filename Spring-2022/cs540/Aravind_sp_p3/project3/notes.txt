@@ -1,0 +1,94 @@
+
+ Named variables include
+ function names (which are visible globally),
+ array names (which are visible globally),
+ parameters (which are only visible in the declared function) and
+ identifiers in let statements (which are only visible in the expression associated with the let statement – which may in turn contain a let statement)
+
+
+
+To accomplish this task, you will add actions to your YACC grammar from part I
+ To keep track of symbols encountered, you will have to implement a data structure that keeps track of the visible names for all currently active scopes during the parsing process
+ As the parsing process encounters a new scope, this information needs to be added and any identifiers declared are recorded in this scope (and checked to make sure they are not duplicates)
+ The use of identifiers within a scope must be checked against the
+current symbol table to see if the name is valid
+ As a scope is exited, all information about that scope is discarded
+
+
+find a scope -
+stack_push_scope
+stack_scope_init
+init the scope table - init_table
+add_to_table
+
+
+
+If, during the parse of a MinLisp program, you encountered a duplicate declaration or a variable that is not declared, a message about this should be printed out, along with the associated line number
+ Processing should continue (you don't have to do anything special for this to happen)
+ Be sure your error messages are informative
+
+
+
+
+
+ ML		:	arrays program   {super_scope.parent=NULL; init_table(super_scope.table);}
+      ;
+ arrays		:	arrays array
+ 					|
+          ;
+ array		:	LEFT_PARAM ARRAY IDENTIFIER NUMBERS RIGHT_PARAM {add_to_table(super_scope.table,$3,$4);}
+          ;
+ program		:	program function {scope_stack_head++;stack_scope_init(scope_stack[scope_stack_head],super_scope);init_table(scope_stack[scope_stack_head].table);}
+ 		|	function {scope_stack_head++;stack_scope_init(scope_stack[scope_stack_head],super_scope);init_table(scope_stack[scope_stack_head].table);}
+ 		;
+ function	:	LEFT_PARAM DEFINE IDENTIFIER param_list expr RIGHT_PARAM {add_to_table(superscope.table,$3,0);scope_stack_head--;}
+ ;
+ param_list	:	LEFT_PARAM RIGHT_PARAM
+ 			|	LEFT_PARAM id_list RIGHT_PARAM
+ 			;
+ id_list		:	id_list IDENTIFIER add_to_table(scope_stack[scope_stack_head],$2,0);
+ 		|	IDENTIFIER  add_to_table(scope_stack[scope_stack_head],$1,0);
+ ;
+
+ expr		: NUMBERS
+ 		|	IDENTIFIER
+ 		|	IDENTIFIER LEFT_SQUARE expr RIGHT_SQUARE
+ 		|	TRUE
+ 		|	FALSE
+ 		|	LEFT_PARAM IF expr expr expr RIGHT_PARAM
+  	|	LEFT_PARAM WHILE expr expr RIGHT_PARAM
+ 		|	LEFT_PARAM IDENTIFIER actual_list RIGHT_PARAM
+  	|	LEFT_PARAM WRITE expr RIGHT_PARAM
+ 		|	LEFT_PARAM WRITELN expr RIGHT_PARAM
+ 		|	LEFT_PARAM READ RIGHT_PARAM
+  	|	LEFT_PARAM LET LEFT_PARAM assign_list RIGHT_PARAM expr RIGHT_PARAM {scope_stack_head++;stack_scope_init(scope_stack[scope_stack_head],scope_stack[scope_stack_head-1]);init_table(scope_stack[scope_stack_head].table);}
+ 		|	LEFT_PARAM SET IDENTIFIER expr RIGHT_PARAM
+ 		|	LEFT_PARAM SET IDENTIFIER LEFT_SQUARE expr RIGHT_SQUARE expr RIGHT_PARAM
+  	|	LEFT_PARAM PLUS expr expr RIGHT_PARAM
+ 		|	LEFT_PARAM MINUS expr expr RIGHT_PARAM
+  	|	LEFT_PARAM MULTIPLY expr expr RIGHT_PARAM
+ 		|	LEFT_PARAM DIVISION expr expr RIGHT_PARAM
+ 		|	LEFT_PARAM GREATER_THAN expr expr RIGHT_PARAM
+ 		|	LEFT_PARAM GREATER_THAN_OR_EQUAL_TO expr expr RIGHT_PARAM
+  	|	LEFT_PARAM LESS_THAN expr expr RIGHT_PARAM
+ 		|	LEFT_PARAM LESS_THAN_OR_EQUAL_TO expr expr RIGHT_PARAM
+  	|	LEFT_PARAM EQUAL expr expr RIGHT_PARAM
+ 		|	LEFT_PARAM NOT_EQUAL_TO expr expr RIGHT_PARAM
+  	|	LEFT_PARAM MINUS expr RIGHT_PARAM
+ 		|	LEFT_PARAM AND  expr expr RIGHT_PARAM
+ 		|	LEFT_PARAM AND_SYMBOL  expr expr RIGHT_PARAM
+  	|	LEFT_PARAM OR  expr expr RIGHT_PARAM
+ 		|	LEFT_PARAM OR_SYMBOL  expr expr RIGHT_PARAM
+ 		|	LEFT_PARAM NOT expr RIGHT_PARAM
+ 		|	LEFT_PARAM NOT_SYMBOL expr RIGHT_PARAM
+    | LEFT_PARAM SEQ expr_list RIGHT_PARAM
+ 		;
+ actual_list	:	actual_list expr
+ 		|
+ 		;
+ assign_list	:	assign_list LEFT_PARAM IDENTIFIER expr RIGHT_PARAM {add_to_table(scope_stack[scope_stack_head],$3,$4);}
+ 		|	LEFT_PARAM IDENTIFIER expr RIGHT_PARAM  {add_to_table(scope_stack[scope_stack_head],$2,$3);scope_stack_head--;}
+ 		;
+ expr_list       :    expr_list expr
+ 		|	expr
+ 		;

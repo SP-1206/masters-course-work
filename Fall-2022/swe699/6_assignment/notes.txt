@@ -1,0 +1,32 @@
+Part 2: Programming - Stop Watch Application
+Due by end of the day on November 13 - submit via Dropbox
+
+Using your installed RTOS as well as repurposing your buttons along with one red and one green LED from the traffic signal assignment, you are to develop a real-time stopwatch application.
+
+One pushbutton should be assigned as a "start/stop" button.  
+The other button should act as a "reset".  
+On initialization, the red light is on, the green light is off, and the time is set to zero (0).  
+
+The “start/stop” button is a toggle:
+If the stopwatch is stopped, pushing this button will start the counter, turn the red light off, and turn the green light on. 
+If the stopwatch is started, pushing this button will stop the counter and switch from the green light back to the red.  This process can continue infinitely without the counter being reset.  If you reach the maximum floating point value for seconds, the counter should "roll over" to zero and keep counting without producing an error.
+
+The "reset" button zeros the counter.  
+This can be done regardless of whether the stopwatch is started or stopped.
+
+While the stopwatch is started, you shall display the running time in seconds on your terminal display to a resolution of 100ms.  When the stopwatch is stopped, the display shall show the time with a resolution of 10ms.
+
+Buttons must be read every 10ms.  Terminal display must be updated every 100ms.  Use Rate Monotonic Scheduling (RMS) to assign priorities to your threads.  The counter should maintain seconds to a resolution of 10ms and be a shared variable accessed by the threads that update and read the time.
+
+You do NOT need to prototype this on QEMU for a grade, but it still may help you work out the logic.
+
+NB: If your chosen RTOS is not POSIX-compliant, you will need to figure out how to work with its version of threads/tasks.
+
+Rubric for Part 2:
+
+        Documentation (including reasoning) of your priority assignments to the threads (10 pts)
+        Code compiles and executes on the RTOS from Part 1 (15 pts)
+        Code is modular and well documented (10 pts)
+        Correct behavior is exhibited with all button combinations (25 pts)
+        Display is correctly updated (while running and when stopped) (25 pts)
+        Correct behavior is exhibited when reaching the maximum counter value (25 pts)

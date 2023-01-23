@@ -1,0 +1,23 @@
+# only errors are marked.   The rest should check as being correct
+( array a 10)
+( define gcd (a a)	# duplicate symbol
+	(if (= a 9)
+	a
+		(if (> a 9)
+		(gcd (- a 9) 9)
+		(gcd a (- 9 a)))
+        ))
+
+(define b () 9)
+
+( define gcd (a b )	# duplicate function
+	(if (= a b)
+	a
+		(if (> a b)
+		(gcd (- a b) b)
+		(gcd a (- b a)))
+        ))
+
+(define main ()
+	(write (gcd 40 10))
+)

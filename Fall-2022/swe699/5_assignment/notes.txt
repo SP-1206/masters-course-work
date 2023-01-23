@@ -1,0 +1,19 @@
+Part 1: Operating System
+Due by end of the day on November 6 - submit via Dropbox.
+For this assignment, you will need to use a real-time operating system. 
+Your options include patching the built-in Debian distribution on the Beagle with the PREEMPT_RT kernel; 
+using Yocto to build a custom distribution for the Beagle (must include a real-time kernel); 
+use a FreeRTOS or RTEMS distribution for the Beagle.
+
+NB: You may find these links useful:
+RTEMS for the Beagle Board - https://devel.rtems.org/wiki/Boards/Beagle%20Board
+FreeRTOS Port - https://www.freertos.org/FreeRTOS_Support_Forum_Archive/March_2019/freertos_FreeRTOS_port_for_AM335x_ffbc26b639j.html
+PREEMPT_RT exercise - https://elinux.org/EBC_Exercise_36_PREEMPT_RT
+
+
+Rubric for Part 1:
+Documentation for how you configured/built the operating system.  This must be sufficient to duplicate your process during our testing. (50 pts)
+Boot OS on the Beagle and provide a screenshot with teammember names, machine name, and OS (like your first QEMU assignment). (50 pts)
+Include an image file that we can flash to an SD card for verification (Google if you don't know how to do this).  (25 pts)
+DISREGARD the image upload - this is going to be too taxing for the network and for my Dropbox when multiplied to the 28 groups.
+Successful use (and documentation) of Yocto, FreeRTOS, or RTEMS: +10pts (i.e. going beyond the minimum of simply using the PREEMPT_RT patch) 

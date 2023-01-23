@@ -1,0 +1,2 @@
+./minlisp  < $1.ml > $1.s
+gcc  -o $1  minlisp_main.c $1.s 

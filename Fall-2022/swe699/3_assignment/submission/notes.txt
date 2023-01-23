@@ -1,0 +1,16 @@
+https://www.ics.com/blog/how-control-gpio-hardware-c-or-c
+
+https://opencoursehub.cs.sfu.ca/bfraser/grav-cms/cmpt433/guides/files/WiringAnLEDGuide.pdf
+
+
+https://toptechboy.com/beaglebone-black-lesson-5-blinking-leds-from-gpio-pins/
+
+https://www.ics.com/blog/gpio-programming-using-sysfs-interface
+
+https://vadl.github.io/beagleboneblack/2016/07/29/setting-up-bbb-gpio
+
+https://opencoursehub.cs.sfu.ca/bfraser/grav-cms/cmpt433/guides/files/WiringAnLEDGuide.pdf
+
+https://www.ics.com/blog/gpio-programming-using-sysfs-interface
+
+https://vadl.github.io/beagleboneblack/2016/07/29/setting-up-bbb-gpio

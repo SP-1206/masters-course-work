@@ -1,0 +1,16 @@
+Results	Entity	CheckID	Line	Column	Ignored	Note
+Number of Results: 7						
+  Published Standards						
+    MISRA C 2012						
+      21.5 The standard header file <signal.h> shall not be used - MISRA12_21.5						
+        /home/sp/Desktop/Masters/swe699/second_assignment/submission/main.c						
+          header file signal.h used.	main.c	MISRA12_21.5	11	0		
+      Directive 4.6 typedefs that indicate size and signedness should be used in place of the basic numerical types - MISRA12_4.6						
+        /home/sp/Desktop/Masters/swe699/second_assignment/submission/main.c						
+          Violation: basic numerical type ""int"" used.	signum	MISRA12_4.6	42	32		
+          Violation: basic numerical type ""char"" used in ""char *"".	direction	MISRA12_4.6	39	49		
+          Violation: basic numerical type ""char"" used in ""char *"".	direction	MISRA12_4.6	219	49		
+          Violation: basic numerical type ""char"" used in ""char [150]"".	path	MISRA12_4.6	234	5		
+          Violation: basic numerical type ""char"" used in ""char [150]"".	path	MISRA12_4.6	279	5		
+          Violation: basic numerical type ""int"" used.	signum	MISRA12_4.6	350	32		
+

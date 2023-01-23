@@ -1,0 +1,40 @@
+    Project 5: Adversarial Search (Connect 4). Due Midnight the evening of Saturday, December 3. There's no late-submission option: it's a GMU hard deadline.
+
+    You will fill out the template.lisp file with your code and rename it as firstname-lastname.lisp, and that's what you'll send to the TA. For example, mine would be called sean-luke.lisp. This file relies on code from connectfour.lisp (you will not modify the connectfour.lisp file nor will you send it to us, we already have it thanks).
+
+    After all the submissions have been received we will grade the assignments but we will ALSO hold a single-elimination connect-four tournament. The winner will receive a bump in his overall course grade.
+
+    To understand this project you'll need to know about two new things: (1) setf functions and (2) packages/namespaces and symbols. It would also be helpful to know about compiler optimization.
+        template.lisp
+        connectfour.lisp 
+
+;;1 for computer
+;; -1 for user
+
+(#2A((1 0 0 0 0 0)
+     (0 0 0 0 0 0)
+     (0 0 0 0 0 0)
+     (0 0 0 0 0 0)
+     (0 0 0 0 0 0)
+     (0 0 0 0 0 0)
+     (0 0 0 0 0 0))
+ -1 41 4) 
+        
+ 0123456
+|       |
+|       |
+|       |
+|       |
+|       |
+|@      |
++-------+
+
+
+#2A((1 -1 1 -1 1 0)
+    (0 0 0 0 0 0)
+    (0 0 0 0 0 0)
+    (0 0 0 0 0 0)
+    (0 0 0 0 0 0)
+    (0 0 0 0 0 0)
+    (0 0 0 0 0 0)) 
+

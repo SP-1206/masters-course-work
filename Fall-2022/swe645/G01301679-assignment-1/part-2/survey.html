@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="./first.css">
+</head>
+<body>
+
+<div class="container">
+  <form>
+  
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">First Name</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname" name="firstname" placeholder="First name.." required>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-25">
+      <label for="lname">Last Name</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="lname" name="lastname" placeholder="Last name.." required>
+    </div>
+  </div>
+    
+  <div class="row">
+    <div class="col-25">
+      <label for="street">street</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="street" name="street" placeholder="street" required>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-25">
+      <label for="city">city</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="city" name="city" placeholder="city" required>
+    </div>
+  </div>
+    
+  <div class="row">
+    <div class="col-25">
+      <label for="state">state</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="state" name="state" placeholder="state" required>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-25">
+      <label for="zip">zip</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="zip" name="zip" placeholder="zip" required>
+    </div>
+  </div>  
+  
+  <div class="row">
+    <div class="col-25">
+      <label for="number">number</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="number" name="number" placeholder="number" required>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-25">
+      <label for="email">email</label>
+    </div>
+    <div class="col-75">
+      <input type="email" id="email" name="email" placeholder="email" required>
+    </div>
+  </div>
+    
+  <div class="row">
+    <div class="col-25">
+      <label for="date_of_survey">date_of_survey</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="date_of_survey" name="date_of_survey" placeholder="date_of_survey" required>
+    </div>
+  </div> 
+   
+     <div class="row">
+    <div class="col-25">
+      <label>What did you like the most on our campus?</label>
+    </div>
+    <div class="col-75">
+      <input type="checkbox" id="students" name="students" value="students">
+	<label for="students"> students</label><br>
+      <input type="checkbox" id="location" name="location" value="location">
+	<label for="location"> location</label><br>
+      <input type="checkbox" id="campus" name="campus" value="campus">
+	<label for="campus"> campus</label><br>
+      <input type="checkbox" id="atmosphere" name="atmosphere" value="atmosphere">
+	<label for="atmosphere"> atmosphere</label><br>
+      <input type="checkbox" id="dorm_rooms" name="dorm_rooms" value="dorm_rooms">
+	<label for="dorm_rooms"> dorm_rooms</label><br>
+      <input type="checkbox" id="sports" name="sports" value="sports">
+	<label for="sports"> sports</label><br>
+    </div>
+  </div> 
+   
+   <div class="row">
+    <div class="col-25">
+      <label>how did you hear about us?</label>
+    </div>
+    <div class="col-75">
+<input type="radio" id="friends" name="hear" value="HTML">
+<label for="friends">friends</label><br>
+<input type="radio" id="television" name="hear" value="television">
+<label for="television">television</label><br>
+<input type="radio" id="Internet" name="hear" value="Internet">
+<label for="Internet">Internet</label> <br>  
+<input type="radio" id="other" name="hear" value="other">
+<label for="other">other</label><br>    
+    </div>
+  </div> 
+   
+   
+   
+  </div>
+  
+  
+  
+  
+  <div class="row">
+    <div class="col-25">
+      <label for="likely">How likely would it be for you to recommend us to other prospective students?</label>
+    </div>
+    <div class="col-75">
+      <select id="likely" name="likely">
+        <option value="very_likely">Very Likely</option>
+        <option value="likely">Likely</option>
+        <option value="unlikely">Unlikely</option>
+      </select>
+    </div>
+  </div>
+  
+    <div class="row">
+    <div class="col-25">
+      <label for="Raffle">Raffle</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="Raffle" name="Raffle" placeholder="Raffle" pattern="([0-9][0-9]|100),([0-9][0-9]|100),([0-9][0-9]|100),([0-9][0-9]|100)" required>
+    </div>
+  </div> 
+  
+  <div class="row">
+    <div class="col-25">
+      <label for="additional_comments">additional_comments</label>
+    </div>
+    <div class="col-75">
+      <textarea id="additional_comments" name="additional_comments" placeholder="additional_comments" style="height:200px"></textarea>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-75">
+        <input type="submit" formaction="./survey.html" value="cancel" style="position: absolute;right: 5px;text-align: right;"> 
+        <input type="submit" formaction="./welcome.html" value="submit"style="position: absolute;right: 100px;text-align: right;">   
+  </div>
+
+ 
+  </form>
+</div>
+
+</body>
+</html>
+
+
+

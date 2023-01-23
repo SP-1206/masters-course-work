@@ -1,0 +1,8 @@
+(define add (x y x)
+  ( if (= y 0)
+x
+     (incr (add x (- y 1)))
+   )
+)
+(define incr(x) (+ x y))
+( define main() (add x 2))

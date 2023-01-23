@@ -1,0 +1,60 @@
+(array a 10)
+(define ttest0 (x )
+  (+   2
+  (seq
+     (+ x true)			# + expects ints
+     (* (< x 2) (+ 3 x))        # * expects ints
+     ( < true 5)                # < expects ints
+     (& true 5)                 # & expects booleans
+     4
+  )
+  )
+)
+
+
+(define ttest3 (x y)
+        (write (- (< y y)))   # unary - expects an integer
+)
+
+
+(define ttest4 (x)
+        (while (read)       # while expects boolean condition
+        (> x 1)))
+
+
+(define ttest1 (x y)
+        (if (= x y)
+        (= x y)
+        (+ x y))    # types don't match in if stmt
+)
+
+(define ttest2 (x y)
+        (if (ttest1 x y)
+	  (ttest2 x 2)
+          (ttest2 false y))    # parameters must be int
+        )
+
+(define ttest5 (x y)
+        (while (! (* x y))    # incorrect type for !
+        (set x (< x x))))     # x should be set to integer not boolean
+
+(define ttest7 ( )
+        (let ( (z (ttest4 2)) )
+                (let ( (z (ttest7  ) )) 1)))
+
+(define ttest9 ()  true)
+
+(define ttest8 (x y)
+        (while (= (* y y) (x 1 1))   # x is not a function
+        (+ ttest7 2)))
+
+(define ttest10 (x)
+  (seq
+   ( + a[x] a)     # array used incorrectly
+   ( + a[ (< 1 2) ] 9)     # array index
+  )
+)
+
+(define mymain()
+     (+ ttest9 a[1] )   # + expects ints
+)

@@ -1,0 +1,40 @@
+Name: Sri Parasara Aravind Sri Ram
+G#: G01301679*/
+Grammar:
+input --> grammar strings
+grammar --> grammar production
+ | production
+production --> NT ARROW T NT EOL
+ | NT ARROW NT EOL
+ | NT ARROW EOL
+strings --> strings string EOL
+ | string EOL
+string --> string T
+ | /* epsilon */
+
+LL(1) and predict sets
+Production                                              Predict
+input -> grammar strings                                   N
+grammar -> production grammar_prime                        N
+grammar_prime -> production grammar_prime                  N
+grammar_prime -> epsilon                                   T,E
+production -> NON_TERMINAL ARROW production_prime          N
+production_prime -> TERMINAL NON_TERMINAL END_OF_LINE      T
+production_prime -> NON_TERMINAL END_OF_LINE               N
+production_prime -> END_OF_LINE                            E
+strings -> string END_OF_LINE strings_prime                E,T
+strings_prime -> string END_OF_LINE string_prime           E,T
+string_prime -> epsilon                                     $ (end)
+string -> string_prime                                      T
+string_prime -> TERMINAL string_prime                       T
+string_prime -> epsilon                                     E
+
+
+Assumptions in code:
+~ represents and epsilon
+
+to compile:
+make
+
+to run:
+./nfa_parser < <test_file>

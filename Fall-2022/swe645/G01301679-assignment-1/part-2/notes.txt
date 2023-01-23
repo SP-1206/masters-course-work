@@ -1,0 +1,4 @@
+vm user name - bitnami
+bitnami Id -password in the home directory
+
+3.237.46.74
