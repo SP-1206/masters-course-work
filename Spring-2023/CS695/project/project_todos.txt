@@ -1,0 +1,26 @@
+1. select team mates - Ram a potential team mate?
+
+2. select a base architexture - CPU/GPU/memory/Cache
+	GPU - one potential issue - no background in AI/ video graphics so cannot actually test..
+
+3. Reliability? Security? Performance?
+	- Reliability and Performance
+
+4. Characterization / optimization?
+
+5. Simulator/instrumentation?
+	- probably simulator - easy to execute and run.
+	
+
+
+SP strengths:
+C, OS, Shell, Linux, Python
+problem solving
+Presentation
+communication skills.
+
+SP weaknesses
+AI, Java, Web development
+Architecture - dont have much idea..
+
+

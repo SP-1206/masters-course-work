@@ -1,0 +1,4 @@
+Anything with embedded systems?reliability wise?
+microservices on GPUs and their check their response times? any improvement?
+GPUs for mapreduce? - parallel processing?
+
